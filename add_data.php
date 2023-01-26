@@ -7,11 +7,11 @@
         $marks = $_POST['marks'];
 
         if($name != "" && $grade != "" && $marks != "" ){
-            $sql = "INSERT INTO results ('name', 'class', 'marks') VALUES ('$name', '$grade', $marks)";
+            $sql = "INSERT INTO results ( name, grade, marks) VALUES ('$name', '$grade', $marks)";
             if (mysqli_query($conn, $sql)) {
-                header("location: index.php");
+                header("location: form.php");
             } else {
-                 echo "Something went wrong. Please try again later.";
+                echo "Something went wrong. Please try again later.";
             }
         }else{
             echo "Name, Class and Marks cannot be empty!";
